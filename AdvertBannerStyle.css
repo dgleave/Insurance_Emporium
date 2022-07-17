@@ -21,7 +21,6 @@ body{
     height: 39vw;
     max-height: 390px;
     width: 80%;
-    /*background-color: #00abc7;*/
     margin: 0 auto;
     border: solid 3px black;
 }
@@ -107,5 +106,26 @@ body{
 .showAllImg{
     width: 100%;
     height: 100%;
+}
+
+.gridContainer{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 88%;
+    margin: 0 auto;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    visibility: hidden;
+    z-index: 20;
+}
+
+.item{
+    border: solid 3px black;
+    cursor: pointer;
 }
 

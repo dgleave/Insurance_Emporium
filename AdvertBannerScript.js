@@ -4,8 +4,10 @@ const leftButton = document.querySelector('.carousel_button--left');
 const rightButton = document.querySelector('.carousel_button--right');
 const navButtons = document.querySelector('.carousel_indicator');
 const navButtonsArray = Array.from(navButtons.children);
-
 const slideWidth = slides[0].getBoundingClientRect().width;
+const showAllButton = document.querySelector('.show_all_button');
+const showAllSlides = document.querySelector('.gridContainer');
+const gridSlidesArray = Array.from(showAllSlides.children);
 
 
 slides.forEach((slide, index)=>{        //Positions slides next to each other rather than on top of each other
@@ -17,6 +19,7 @@ const goToSlide = (slideList, currentSlide, targetSlide) => {
     currentSlide.classList.remove('current-slide');
     targetSlide.classList.add('current-slide');
 }
+
 
 rightButton.addEventListener('click', e => {
     let currentSlide = slideList.querySelector('.current-slide');     //gets current slide being viewed
@@ -40,19 +43,40 @@ leftButton.addEventListener('click',e => {
 
 navButtons.addEventListener('click', e =>{
     const clickedButton = e.target.closest('button');
-    console.log(clickedButton);
     if(!clickedButton) return;
 
     const currentSlide = slideList.querySelector('.current-slide');
     const currentButton = navButtons.querySelector('.current-slide');
     const targetButtonIndex = navButtonsArray.findIndex(btn => btn === clickedButton);
     const targetSlide = slides[targetButtonIndex];
+    console.log('My Target: ',targetSlide);
 
     goToSlide(slideList, currentSlide, targetSlide);
     updateButtons(currentButton, clickedButton);
 })
 
 const updateButtons = (currentButton, clickedButton) => {
+    console.log('clicked button ',clickedButton);
     currentButton.classList.remove('current-slide');
     clickedButton.classList.add('current-slide');
 }
+
+showAllButton.addEventListener('click', e =>{
+    if(showAllSlides.style.visibility === "visible"){
+        showAllSlides.style.visibility = "hidden";
+    } else{
+        showAllSlides.style.visibility = "visible";
+    }
+})
+
+showAllSlides.addEventListener('click', e =>{
+    const clickedGrid = e.target.id;
+    console.log(clickedGrid);
+    const currentSlide = slideList.querySelector('.current-slide');
+    const targetButtonIndex = slides[clickedGrid];
+    goToSlide(slideList, currentSlide, targetButtonIndex);
+    const currentButton = navButtons.querySelector('.current-slide');
+    const clickedButton = navButtonsArray[clickedGrid];
+    updateButtons(currentButton, clickedButton);
+    showAllSlides.style.visibility = "hidden";
+})
