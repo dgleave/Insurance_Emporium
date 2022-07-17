@@ -32,19 +32,23 @@ body{
     bottom: 0;
     left: 0;
     right: 0;
+
 }
 
 .carousel_slide_container_list{
     /*background-color: #00abc7;*/
     list-style: none;
+    position: relative;
+    height: 100%;
 }
 
 .carousel_slide_container{
     padding: 0;
     margin: 0;
     list-style: none;
-    height: 100%;
     position: relative;
+    height: 100%;
+    overflow: hidden;
 }
 
 .carousel_button{
@@ -73,10 +77,16 @@ body{
 .carousel_Indicator_Button{
     border: 0;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     background-color: #00abc7;
     margin: 0 10px;
     cursor: pointer;
+}
+
+.carousel_Indicator_Button.current-slide{
+    background-color: white;
+    border:solid 2px #00abc7;
+
 }
 

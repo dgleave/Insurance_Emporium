@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <title>Carousel Update</title>
     <link rel="stylesheet" href="AdvertBannerStyle.css">
-    <script src="AdvertBannerScript.js"></script>
 </head>
 <body onload="createCarouselBtn()">
 <h1>Constrained Carousel</h1>
 <div class="carousel">
-    <button class="carousel_button carousel_button--left">
+    <button class="carousel_button carousel_button--left" style="z-index: 100">
         <img class="btnImgLeft" src="assets/arrow-right.png">
     </button>
     <div class="carousel_slide_container">
         <ul id="myItems" class="carousel_slide_container_list">
-            <li class="carousel_slide">
+            <li class="carousel_slide current-slide">
                 <img class="images" src="assets/logo-theinsuranceemporium.co.uk.png" alt="">
             </li>
             <li class="carousel_slide">
@@ -28,17 +27,18 @@
             </li>
         </ul>
     </div>
-    <button class="carousel_button carousel_button--right">
+    <button class="carousel_button carousel_button--right" style="z-index: 100">
         <img class="btnImgRight" src="assets/arrow-right.png">
     </button>
 
     <div id="carouselIndicator" class="carousel_indicator">
-        <button class="carousel_Indicator_Button"></button>
+        <button class="carousel_Indicator_Button current-slide"></button>
         <button class="carousel_Indicator_Button"></button>
         <button class="carousel_Indicator_Button"></button>
         <button class="carousel_Indicator_Button"></button>
     </div>
 </div>
 
+<script src="AdvertBannerScript.js"></script>
 </body>
 </html>
