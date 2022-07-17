@@ -22,7 +22,6 @@ body{
     max-height: 390px;
     width: 80%;
     margin: 0 auto;
-    border: solid 3px black;
 }
 
 .carousel_slide{
@@ -33,6 +32,7 @@ body{
     bottom: 0;
     left: 0;
     right: 0;
+    background-color: #00abc7;
 }
 
 .carousel_slide_container_list{
@@ -122,10 +122,13 @@ body{
     background-color: black;
     visibility: hidden;
     z-index: 20;
+    border-left: solid black 70px;
+    border-right: solid black 37px;
 }
 
 .item{
     border: solid 3px black;
     cursor: pointer;
+    width: 90%;
 }
 
