@@ -2,10 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Carousel Update</title>
+    <link rel="stylesheet" href="AdvertBannerStyle.css">
 </head>
 <body>
-<h1>Constrained Carousel</h1>
+<div class="carousel">
+    <button class="carousel_button carousel_button--left" style="z-index: 100">
+        <img class="btnImgLeft" src="assets/arrow-right.png">
+    </button>
+    <div class="carousel_slide_container">
+        <ul id="myItems" class="carousel_slide_container_list">
+            <li class="carousel_slide current-slide">
+                <img class="images" src="assets/logo-theinsuranceemporium.co.uk.png" alt="">
+            </li>
+            <li class="carousel_slide">
+                <img class="images" src="assets/eddie-defaqto-5-star-insurance-2022 (1).png" alt="">
+            </li>
+            <li class="carousel_slide">
+                <img class="images" src="assets/eddie_waving_banner_2022.png" alt="">
+            </li>
+            <li class="carousel_slide">
+                <img class="images" src="assets/eddie_waving_in_roundel.png" alt="">
+            </li>
+        </ul>
+    </div>
+    <button class="carousel_button carousel_button--right" style="z-index: 100">
+        <img class="btnImgRight" src="assets/arrow-right.png">
+    </button>
 
+    <div id="carouselIndicator" class="carousel_indicator">
+        <button class="carousel_Indicator_Button current-slide"></button>
+        <button class="carousel_Indicator_Button"></button>
+        <button class="carousel_Indicator_Button"></button>
+        <button class="carousel_Indicator_Button"></button>
+    </div>
+
+    <div class="show_all_slides">
+        <button class="show_all_button">
+            <img class="showAllImg" src="assets/up-arrow-png-27166.png">
+        </button>
+    </div>
+    <div>
+    <ul class="gridContainer">
+        <li class="item">
+            <img class="images" id="0" src="assets/logo-theinsuranceemporium.co.uk.png" alt="">
+        </li>
+        <li class="item">
+            <img class="images" id="1" src="assets/eddie-defaqto-5-star-insurance-2022.png" alt="">
+        </li>
+        <li class="item">
+            <img class="images" id="2" src="assets/eddie_waving_banner_2022.png" alt="">
+        </li>
+        <li class="item">
+            <img class="images" id="3" src="assets/eddie_waving_in_roundel.png" alt="">
+        </li>
+    </ul>
+    </div>
+</div>
+
+<script src="AdvertBannerScript.js"></script>
 </body>
 </html>
