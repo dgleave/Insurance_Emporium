@@ -22,10 +22,37 @@ rightButton.addEventListener('click', e => {
     let currentSlide = slideList.querySelector('.current-slide');     //gets current slide being viewed
     const nextSlide = currentSlide.nextElementSibling;                          //gets next slide in the list
     goToSlide(slideList, currentSlide, nextSlide);
+
+    const currentButton = navButtons.querySelector('.current-slide');
+    const clickedButton = currentButton.nextElementSibling;
+    updateButtons(currentButton, clickedButton);
 })
 
 leftButton.addEventListener('click',e => {
     const currentSlide = slideList.querySelector('.current-slide');     //gets current slide being viewed
     const lastSlide = currentSlide.previousElementSibling;                          //gets next slide in the list
     goToSlide(slideList, currentSlide, lastSlide);
+
+    const currentButton = navButtons.querySelector('.current-slide');
+    const clickedButton = currentButton.previousElementSibling;
+    updateButtons(currentButton, clickedButton);
 })
+
+navButtons.addEventListener('click', e =>{
+    const clickedButton = e.target.closest('button');
+    console.log(clickedButton);
+    if(!clickedButton) return;
+
+    const currentSlide = slideList.querySelector('.current-slide');
+    const currentButton = navButtons.querySelector('.current-slide');
+    const targetButtonIndex = navButtonsArray.findIndex(btn => btn === clickedButton);
+    const targetSlide = slides[targetButtonIndex];
+
+    goToSlide(slideList, currentSlide, targetSlide);
+    updateButtons(currentButton, clickedButton);
+})
+
+const updateButtons = (currentButton, clickedButton) => {
+    currentButton.classList.remove('current-slide');
+    clickedButton.classList.add('current-slide');
+}
