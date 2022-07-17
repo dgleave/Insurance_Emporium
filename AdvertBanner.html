@@ -2,10 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Carousel Update</title>
+    <link rel="stylesheet" href="AdvertBannerStyle.css">
+    <script src="AdvertBannerScript.js"></script>
 </head>
-<body>
+<body onload="createCarouselBtn()">
 <h1>Constrained Carousel</h1>
+<div class="carousel">
+    <button class="carousel_button carousel_button--left">
+        <img class="btnImgLeft" src="assets/arrow-right.png">
+    </button>
+    <div class="carousel_slide_container">
+        <ul id="myItems" class="carousel_slide_container_list">
+            <li class="carousel_slide">
+                <img class="images" src="assets/logo-theinsuranceemporium.co.uk.png" alt="">
+            </li>
+            <li class="carousel_slide">
+                <img class="images" src="assets/eddie-defaqto-5-star-insurance-2022.png" alt="">
+            </li>
+            <li class="carousel_slide">
+                <img class="images" src="assets/eddie_waving_banner_2022.png" alt="">
+            </li>
+            <li class="carousel_slide">
+                <img class="images" src="assets/eddie_waving_in_roundel.png" alt="">
+            </li>
+        </ul>
+    </div>
+    <button class="carousel_button carousel_button--right">
+        <img class="btnImgRight" src="assets/arrow-right.png">
+    </button>
+
+    <div id="carouselIndicator" class="carousel_indicator">
+        <button class="carousel_Indicator_Button"></button>
+        <button class="carousel_Indicator_Button"></button>
+        <button class="carousel_Indicator_Button"></button>
+        <button class="carousel_Indicator_Button"></button>
+    </div>
+</div>
 
 </body>
 </html>
